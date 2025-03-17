@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Collection;
 
 @RestController
-public class LoginController {
+public class HomePageController {
 
-    @GetMapping
+    @GetMapping("/home")
     public String homePage(){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String username = authentication.getName();
         Collection<? extends GrantedAuthority> roles = authentication.getAuthorities();
-        return "Witamy na stronie startowej CookMe!!! \n Zalogowany jako: " + username + " | Role: " + roles;
+        return "Witamy na stronie startowej spółki KamPos!!! \n Zalogowany jako: " + username + " | Role: " + roles;
     }
 }
